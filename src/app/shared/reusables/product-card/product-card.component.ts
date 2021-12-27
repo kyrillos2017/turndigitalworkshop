@@ -23,14 +23,14 @@ export class ProductCardComponent implements OnInit {
     }
   }
 
-  selectQuantity(quantity: number){
+  public selectQuantity(quantity: number){
     this.selectedQuantity = quantity;
 
     if(this.selected)
     this.selectItem(false)
   }
 
-  updateCart(isNew = true){
+  private updateCart(isNew = true){
     if(this.selected)
     this.toast.success(
       `${this.product?.name} is ${isNew? 'added' : 'updated'} with quantity ${this.selectedQuantity} item${this.selectedQuantity > 1 ? "s": ''} and total price of $${this.selectedQuantity * this.product?.price!}.`,
@@ -44,7 +44,7 @@ export class ProductCardComponent implements OnInit {
     )
   }
 
-  selectItem(isNew = true){
+  public selectItem(isNew = true){
     this.updateCart(isNew)
   }
 
