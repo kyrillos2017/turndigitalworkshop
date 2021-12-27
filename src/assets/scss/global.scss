@@ -1,0 +1,36 @@
+*:focus{
+  box-shadow: none !important;
+}
+
+// custom classes
+.pointer{cursor: pointer;}
+
+
+// customs styles
+.accordion-header{
+  border: none !important;
+}
+.accordion-header div.panel-heading{
+  padding: 0 !important;
+  border: none !important;
+}
+
+.accordion-header .panel-body{
+  padding: 20px 0 !important;
+}
+
+.closed .fa-chevron-up{
+  transform: rotate(180deg) !important;
+}
+
+.product-card .form-check-input{
+  width: 1.5em;
+  height: 1.5em;
+}
+
+
+.dropdown-toggle::after{
+  right: 9px;
+  position: absolute;
+  top: calc(50% - 2px);
+}

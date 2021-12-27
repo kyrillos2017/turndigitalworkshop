@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-between align-items-center menu-header-mobile">
+  <h2>Menu</h2>
+  <div class="row m-0">
+    <div class="col-md-6">
+      <div class="btn-group mb-3 w-100" dropdown>
+        <button id="button-basic" dropdownToggle type="button"
+          class="btn btn-primary dropdown-toggle bg-white text-dark border text-start" aria-controls="dropdown-basic">
+          <span class="d-inline-block">{{selectedCategory}}</span> <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu w-100" role="menu" aria-labelledby="button-basic">
+          <li *ngFor="let c of categorie$ | async" role="menuitem"><a (click)="selectCategory(c)" class="dropdown-item pointer">{{c}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group mb-3 w-100">
+        <input
+        (keyup)="search($event)"
+        [ngModel]="searchInput"
+        type="text" class="form-control border-end-0" placeholder="Search" aria-label="Search"
+          aria-describedby="basic-addon1">
+        <span class="input-group-text bg-white" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>

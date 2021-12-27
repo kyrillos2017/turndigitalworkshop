@@ -1,0 +1,17 @@
+@media (max-width: 540px) {
+  .menu-header-mobile{
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 440px) and (max-width: 767px){
+  .product-card{
+    height: 38rem;
+  }
+}
+
+@media (max-width: 440px){
+  .product-card{
+    min-height: 30rem;
+  }
+}

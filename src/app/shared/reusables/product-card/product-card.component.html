@@ -1,0 +1,46 @@
+<div *ngIf="product" class="card position-relative product-card w-100 h-100" style="width: 18rem;">
+  <div class="position-absolute fixed-top p-3">
+    <div class="form-check">
+      <input class="form-check-input pointer"
+      (change)="selectItem()"
+      [(ngModel)]="selected"
+      type="checkbox" value="" id="flexCheckDefault">
+    </div>
+  </div>
+
+  <img [src]="product.images" class="card-img-top" alt="...">
+
+  <div class="card-body d-flex justify-content-between flex-column">
+    <div class="mb-5">
+      <h5 class="card-title">{{product.name}}</h5>
+
+      <p class="card-text text-secondary">{{product.description}}</p>
+    </div>
+
+    <div>
+      <div class="text-primary fw-bolder">${{product.price}}</div>
+
+      <p class="mb-1">Quantity</p>
+
+      <div class="btn-group" dropdown [dropup]="true">
+        <button id="button-basic" dropdownToggle type="button" class="dropdown-toggle border rounded bg-transparent p-2"
+          aria-controls="dropdown-basic">
+          <span class="dinline-block pe-4">{{selectedQuantity}}</span> <span class="caret"></span>
+        </button>
+
+        <ul id="dropdown-basic"
+        *dropdownMenu class="dropdown-menu w-100"
+         role="menu" aria-labelledby="button-basic"
+         >
+          <li role="menuitem"
+          *ngFor="let q of quantites"
+          ><a class="dropdown-item pointer"
+          (click)="selectQuantity(q)"
+          >{{q}}</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</div>

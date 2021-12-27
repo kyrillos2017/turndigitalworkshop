@@ -1,0 +1,19 @@
+<accordion [isAnimated]="true">
+  <accordion-group *ngFor="let item of product$ | async" [panelClass]="'accordion-header'">
+    <button (click)="toggleClass($event, 'closed')"
+      class="closed btn btn-link btn-block w-100  shadow-none bg-white border-0 border-bottom rounded-0 py-3 px-0"
+      accordion-heading type="button">
+      <div class="pull-left float-left text-dark fw-bolder">{{item.categoryName}}</div>
+      <span class="text-dark float-right pull-right border p-1 rounded">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+      </span>
+    </button>
+    <div>
+      <div class="row products-list">
+        <div class="col-md-4 col-lg-3 mb-4" *ngFor="let p of item.products">
+          <app-product-card [product]="p"></app-product-card>
+        </div>
+      </div>
+    </div>
+  </accordion-group>
+</accordion>
